@@ -6,5 +6,9 @@ namespace Leveling_Up
 {
     class Shop
     {
+        public Shop()
+        {
+
+        }
     }
 }

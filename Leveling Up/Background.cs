@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Leveling_Up
 {
-    class Player
+    class Background
     {
-        public Player()
+        public Background()
         {
 
         }

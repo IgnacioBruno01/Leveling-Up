@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Leveling_Up
 {
-    class Enemy
+    public abstract class Enemy
     {
+        public Enemy()
+        {
+
+        }
     }
 }

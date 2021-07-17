@@ -6,5 +6,9 @@ namespace Leveling_Up
 {
     class Dungeon
     {
+        public Dungeon()
+        {
+
+        }
     }
 }
