@@ -5,8 +5,22 @@ using System.Text;
 
 namespace Leveling_Up
 {
-    class Player
+    public class Player
     {
+        public string name;
+        public int level;
+        public int maxHP;
+        public int HP;
+        public int maxMana;
+        public int mana;
+        public int speed;
+        public int ataque;
+        public int ataquemagico;
+        public int defensa;
+        public int defensaMagica;
+        public int xpActual;
+        public int xpProximoNivel;
+        private bool muertePJ;
         public Player()
         {
 

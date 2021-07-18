@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Leveling_Up
 {
-    class Dungeon
+    class City
     {
-        private Enemy enemy;
-        public Dungeon()
+        public void HealerPlayer(Player player)
         {
 
         }

@@ -9,6 +9,8 @@ namespace Leveling_Up
     {
         private Background background;
         private Player player;
+        private Dungeon dungeon;
+        private Shop shop;
 
         public GamePlay()
         {
