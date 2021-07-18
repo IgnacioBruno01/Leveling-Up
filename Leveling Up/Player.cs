@@ -1,37 +1,34 @@
 ﻿using SFML.Graphics;
+using SFML.System;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Leveling_Up
 {
-    public class Player
+    public class Player : GameObjectBase
     {
-        public string name;
-        public int level;
-        public int maxHP;
-        public int HP;
-        public int maxMana;
-        public int mana;
-        public int speed;
-        public int ataque;
-        public int ataquemagico;
-        public int defensa;
-        public int defensaMagica;
         public int xpActual;
         public int xpProximoNivel;
         private bool muertePJ;
-        public Player()
+        public Player() : base("Player/Sprites", new Vector2f(0.0f, 0.0f),name)
         {
+            this.name = lines[0];
+
 
         }
-        public void Update()
+
+
+        public override void Update()
         {
 
+
+            base.Update();
         }
-        public void Draw(RenderWindow window)
+        public override void Draw(RenderWindow window)
         {
-
+            base.Draw(window);
         }
     }
 }

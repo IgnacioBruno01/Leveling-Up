@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Leveling_Up
 {
-    public abstract class Enemy
+    public abstract class Enemy : GameObjectBase
     {
         protected string name;
         protected int level;
@@ -20,15 +20,16 @@ namespace Leveling_Up
         protected int xpDropeada;
         protected string botin;
         public bool muerteEnemy;
-        public Enemy(string name, int level, int maxHP, int HP, int maxMana, int mana, int speed, int ataque, int ataquemagico, int defensa, int defensaMagica, int xpDropeada, string botin)
+        public Enemy("Monstruos/Sprites", new Vector2f(0.0f, 0.0f))
         {
 
         }
     }
+
     public sealed class Goblin : Enemy
     {
-        public Goblin(string name, int level, int maxHP, int HP, int maxMana, int mana, int speed, int ataque, int ataquemagico, 
-            int defensa, int defensaMagica, int xpDropeada, string botin) : base (name, level,maxHP, HP, maxMana,mana,speed,ataque,ataquemagico,defensa,defensaMagica,xpDropeada,botin)
+        public Goblin(string name, int level, int maxHP, int HP, int maxMana, int mana, int speed, int ataque, int ataquemagico,
+            int defensa, int defensaMagica, int xpDropeada, string botin) : base(name, level, maxHP, HP, maxMana, mana, speed, ataque, ataquemagico, defensa, defensaMagica, xpDropeada, botin)
         {
 
         }

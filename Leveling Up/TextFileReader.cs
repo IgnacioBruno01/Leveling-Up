@@ -31,7 +31,7 @@ namespace Leveling_Up
 
         public static Enemy ReadEnemyFromFile(string path)
         {
-            Enemy e = new Goblin();
+            Enemy e = new Enemy();
             string[] lines = File.ReadAllLines(path);
 
             e.name = lines[0];
