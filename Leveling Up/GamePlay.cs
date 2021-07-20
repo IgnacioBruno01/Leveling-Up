@@ -15,7 +15,7 @@ namespace Leveling_Up
         public GamePlay()
         {
             background = new Background();
-            player = new Player();
+            player = new Player(TextFileReader.ReadPlayerFromFile("Player/Player"));
         }
         public void Update()
         {

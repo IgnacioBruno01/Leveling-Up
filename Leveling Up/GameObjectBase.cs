@@ -23,11 +23,10 @@ namespace Leveling_Up
         public int defensa;
         public int defensaMagica;
 
-        public GameObjectBase(string texturePath, Vector2f startPosition, string name, int level, int maxHP, int HP, int maxMana, int mana, int speed, int ataque, int ataquemagico, int defensa, int defensaMagica)
+        public GameObjectBase(string texturePath, Vector2f startPosition, string type, string name, int level, int maxHP, int HP, int maxMana, int mana, int speed, int ataque, int ataquemagico, int defensa, int defensaMagica)
         {
             texture = new Texture(texturePath);
             sprite = new Sprite(texture);
-            currentPosition = new Vector2f(startPosition);
             currentPosition = startPosition;
             sprite.Position = currentPosition;
             this.name = name;

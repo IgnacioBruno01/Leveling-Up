@@ -7,6 +7,7 @@ namespace Leveling_Up
     class Dungeon
     {
         private Enemy enemy;
+        public List<Enemy> Enemies = new List<Enemy>();
         public Dungeon()
         {
 
