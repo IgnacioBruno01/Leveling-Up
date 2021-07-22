@@ -1,4 +1,5 @@
 ﻿using SFML.Graphics;
+using SFML.System;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,11 +12,12 @@ namespace Leveling_Up
         private Player player;
         private Dungeon dungeon;
         private Shop shop;
+        Vector2f inicialPlayerPosition = new Vector2f(0.0f, 0.0f);
 
         public GamePlay()
         {
             background = new Background();
-            player = new Player(TextFileReader.ReadPlayerFromFile("Player/Player"));
+            player = new Player("Player/Sprites/Sprite Player.png", inicialPlayerPosition);
         }
         public void Update()
         {

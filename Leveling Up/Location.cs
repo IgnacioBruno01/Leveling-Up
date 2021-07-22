@@ -1,1 +1,1 @@
-﻿    public enum Location{City,Dungeon,Shop};
+﻿    public enum Location{City,Dungeon,Shop, Home};

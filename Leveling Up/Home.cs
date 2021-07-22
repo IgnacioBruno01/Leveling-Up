@@ -4,24 +4,18 @@ using System.Text;
 
 namespace Leveling_Up
 {
-    class Shop
+    class Home
     {
-        enum Options { GoToCity,Buy,Sell, Error}
-        public Shop()
+        enum Options { HealerPlayer, GoToCity, Error }
+        public Player HealerPlayer(Player player)
         {
-
-        }
-        public Player Buy(Player player)
-        {
-            return player;
-        }
-        public Player Sell(Player player)
-        {
+            player.Heal();
+            player.RestoreMana();
             return player;
         }
         public Player Stay(Player player)
         {
-            bool stayInsideShop = true;
+            bool stayInsideHome = true;
             Console.WriteLine("Welcome!");
             Options option;
             do
@@ -41,22 +35,19 @@ namespace Leveling_Up
 
                 switch (option)
                 {
+                    case Options.HealerPlayer:
+                        player = HealerPlayer(player);
+                        break;
                     case Options.GoToCity:
                         player.GoToCity();
-                        stayInsideShop = false;
-                        break;
-                    case Options.Buy:
-                        player = Buy(player);
-                        
-                        break;
-                    case Options.Sell:
-                        player = Sell(player);
+                        stayInsideHome = false;
                         break;
                     default:
                         break;
                 }
-            } while (stayInsideShop);
+            } while (stayInsideHome);
             return player;
         }
+
     }
 }

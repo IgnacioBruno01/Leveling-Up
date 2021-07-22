@@ -36,13 +36,13 @@ namespace Leveling_Up
 		}
 	}
 	sealed class HealerPotion : Potion
-    {
+	{
 		int _quantity;
-		public HealerPotion(string name, int price, string description, int quantity) : base (name, price, description, quantity)
-        {
+		public HealerPotion(string name, int price, string description, int quantity) : base(name, price, description, quantity)
+		{
 			_quantity = quantity;
-        }
-    }
+		}
+	}
 	sealed class ManaPotion : Potion
 	{
 		int _quantity;
@@ -68,13 +68,13 @@ namespace Leveling_Up
 		}
 	}
 	sealed class MetalArrow : Consumables
-    {
+	{
 		int _quantity;
-		public MetalArrow(string name, int price, string description, int quantity) : base (name, price, description, quantity)
-        {
+		public MetalArrow(string name, int price, string description, int quantity) : base(name, price, description, quantity)
+		{
 			_quantity = quantity;
-        }
-    }
+		}
+	}
 	abstract class Equipment : Items
 	{
 		public Equipment(string name, int price, string description) : base(name, price, description)
@@ -84,51 +84,72 @@ namespace Leveling_Up
 	}
 	abstract class Armadura : Equipment
 	{
-		public Armadura(string name, int price, string description) : base(name, price, description)
+		public int _defense;
+		public Armadura(string name, int price, string description, int defense) : base(name, price, description)
 		{
-
+			_defense = defense;
 		}
 	}
 	sealed class armaduraCuero : Armadura
 	{
-		public armaduraCuero(string name, int price, string description) : base(name, price, description)
+
+		public armaduraCuero(string name, int price, string description, int defense) : base(name, price, description, defense)
+		{
+		}
+	}
+	sealed class armaduraPlaca : Armadura
+	{
+
+		public armaduraPlaca(string name, int price, string description, int defense) : base(name, price, description, defense)
 		{
 		}
 	}
 	abstract class Shield : Equipment
 	{
-		public Shield(string name, int price, string description) : base(name, price, description)
+		public int _defense;
+		public Shield(string name, int price, string description, int defense) : base(name, price, description)
 		{
+			_defense = defense;
 		}
 	}
 	abstract class Armas : Equipment
 	{
-		public Armas(string name, int price, string description) : base(name, price, description)
+		public int _Damage;
+		public Armas(string name, int price, string description, int Damage) : base(name, price, description)
 		{
+			_Damage = Damage;
 		}
 	}
 	abstract class Sword : Equipment
 	{
-		public Sword(string name, int price, string description) : base(name, price, description)
+		public int _Damage;
+		public Sword(string name, int price, string description, int Damage) : base(name, price, description)
 		{
+			_Damage = Damage;
 		}
 	}
 	abstract class Lance : Equipment
 	{
-		public Lance(string name, int price, string description) : base(name, price, description)
+		public int _Damage;
+		public Lance(string name, int price, string description, int Damage) : base(name, price, description)
 		{
+			_Damage = Damage;
 		}
 	}
 	abstract class Bow : Equipment
 	{
-		public Bow(string name, int price, string description) : base(name, price, description)
+		public int _Damage;
+		public Bow(string name, int price, string description, int Damage) : base(name, price, description)
 		{
+			_Damage = Damage;
 		}
 	}
 	abstract class Dagger : Equipment
 	{
-		public Dagger(string name, int price, string description) : base(name, price, description)
+		public int _Damage;
+		public Dagger(string name, int price, string description, int Damage) : base(name, price, description)
 		{
+			_Damage = Damage;
 		}
 	}
 	abstract class Acessories : Equipment
