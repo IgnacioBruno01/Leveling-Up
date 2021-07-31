@@ -73,16 +73,15 @@ namespace Leveling_Up
            // }
             enemy.level = Convert.ToInt32(lines[1]);
             enemy.maxHP = Convert.ToInt32(lines[2]);
-            enemy.HP = Convert.ToInt32(lines[3]);
-            enemy.maxMana = Convert.ToInt32(lines[4]);
-            enemy.mana = Convert.ToInt32(lines[5]);
-            enemy.speed = Convert.ToInt32(lines[6]);
-            enemy.ataque = Convert.ToInt32(lines[7]);
-            enemy.ataquemagico = Convert.ToInt32(lines[8]);
-            enemy.defensa = Convert.ToInt32(lines[9]);
-            enemy.defensaMagica = Convert.ToInt32(lines[10]);
-            enemy.xpDropeada = Convert.ToInt32(lines[11]);
-
+            enemy.HP = enemy.maxHP;
+            enemy.maxMana = Convert.ToInt32(lines[3]);
+            enemy.mana = enemy.maxMana;
+            enemy.speed = Convert.ToInt32(lines[4]);
+            enemy.ataque = Convert.ToInt32(lines[5]);
+            enemy.ataquemagico = Convert.ToInt32(lines[6]);
+            enemy.defensa = Convert.ToInt32(lines[7]);
+            enemy.defensaMagica = Convert.ToInt32(lines[8]);
+            enemy.xpDropeada = Convert.ToInt32(lines[9]);
         }
     }
 }

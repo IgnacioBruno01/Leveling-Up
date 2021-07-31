@@ -1,5 +1,6 @@
 ﻿using SFML.Graphics;
 using SFML.System;
+using SFML.Window;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,13 +22,31 @@ namespace Leveling_Up
 
         public override void Update()
         {
-
-
             base.Update();
         }
         public override void Draw(RenderWindow window)
         {
             base.Draw(window);
+        }
+
+        private void Movement()
+        {
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D))
+            {
+                currentPosition.X += speed * FrameRate.GetDeltaTime();
+            }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.A))
+            {
+                currentPosition.X -= speed * FrameRate.GetDeltaTime();
+            }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.S))
+            {
+                currentPosition.Y += speed * FrameRate.GetDeltaTime();
+            }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.W))
+            {
+                currentPosition.Y -= speed * FrameRate.GetDeltaTime();
+            }
         }
         public Location GetLocation()
         {

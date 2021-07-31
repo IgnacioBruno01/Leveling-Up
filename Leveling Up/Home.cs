@@ -16,7 +16,7 @@ namespace Leveling_Up
         public Player Stay(Player player)
         {
             bool stayInsideHome = true;
-            Console.WriteLine("Welcome!");
+            Console.WriteLine("Home sweet home!");
             Options option;
             do
             {

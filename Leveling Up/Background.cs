@@ -11,10 +11,7 @@ namespace Leveling_Up
         {
 
         }
-        public void Update()
-        {
 
-        }
         public void Draw(RenderWindow window)
         {
 

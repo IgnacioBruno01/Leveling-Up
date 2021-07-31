@@ -8,7 +8,6 @@ namespace Leveling_Up
 {
     class Game
     {
-        public static uint FRAMERATE_LIMIT = 60;
         private RenderWindow window;
         private GamePlay gameplay;
         public Game()
@@ -19,7 +18,7 @@ namespace Leveling_Up
 
             window = new RenderWindow(videomode, "Leveling Up");
             window.Closed += CloseWindow;
-            window.SetFramerateLimit(FRAMERATE_LIMIT);
+            window.SetFramerateLimit(FrameRate.FRAMERATE_LIMIT);
 
             gameplay = new GamePlay();
         }

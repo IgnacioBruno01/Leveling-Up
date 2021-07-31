@@ -22,11 +22,11 @@ namespace Leveling_Up
         public Player Stay(Player player)
         {
             bool stayInsideShop = true;
-            Console.WriteLine("Welcome!");
+            Console.WriteLine("Welcome to the shop 'Hephaestus'! How can I help you?");
             Options option;
             do
             {
-                Console.WriteLine("Rest = 0   -   Leave = 1");
+                Console.WriteLine("Buy = 0   -   Sell = 1");
 
                 int input = Convert.ToInt32(Console.ReadLine());
 

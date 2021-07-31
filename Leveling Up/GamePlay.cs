@@ -11,7 +11,7 @@ namespace Leveling_Up
         private Background background;
         private Player player;
         private Dungeon dungeon;
-        private Shop shop;
+        //private Shop shop;
         Vector2f inicialPlayerPosition = new Vector2f(0.0f, 0.0f);
 
         public GamePlay()
@@ -21,7 +21,6 @@ namespace Leveling_Up
         }
         public void Update()
         {
-            background.Update();
             player.Update();
         }
         public void Draw(RenderWindow window)
