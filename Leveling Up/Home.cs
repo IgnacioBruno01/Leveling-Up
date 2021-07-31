@@ -15,14 +15,13 @@ namespace Leveling_Up
         }
         public Player Stay(Player player)
         {
-            bool stayInsideHome = true;
+          
             Console.WriteLine("Home sweet home!");
             Options option;
-            do
-            {
+            
                 Console.WriteLine("Rest = 0   -   Leave = 1");
 
-                int input = Convert.ToInt32(Console.ReadLine());
+                
 
                 if (input >= 0 && input < (int)Options.Error)
                 {
@@ -40,13 +39,21 @@ namespace Leveling_Up
                         break;
                     case Options.GoToCity:
                         player.GoToCity();
-                        stayInsideHome = false;
+                    
                         break;
                     default:
                         break;
                 }
-            } while (stayInsideHome);
             return player;
+        }
+
+        public void Update(Player player)
+        {
+
+        }
+        public void Draw()
+        {
+
         }
 
     }

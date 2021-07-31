@@ -8,25 +8,49 @@ namespace Leveling_Up
 {
     class GamePlay
     {
+        public enum Location { City, Dungeon, Home };
+        private Location currentLocation;
         private Background background;
         private Player player;
         private Dungeon dungeon;
-        //private Shop shop;
+        private Home home;
+        private City city;
         Vector2f inicialPlayerPosition = new Vector2f(0.0f, 0.0f);
 
         public GamePlay()
         {
-            background = new Background();
+            home = new Home();
             player = new Player("Player/Sprites/Sprite Player.png", inicialPlayerPosition);
         }
         public void Update()
         {
-            player.Update();
+            switch (currentLocation)
+            {
+                case Location.City:
+                    break;
+                case Location.Dungeon:
+                    break;
+                case Location.Home:
+                    home.Update(player);
+                    break;
+                default:
+                    break;
+            }
         }
         public void Draw(RenderWindow window)
         {
-            background.Draw(window);
-            player.Draw(window);
+            switch (currentLocation)
+            {
+                case Location.City:
+                    break;
+                case Location.Dungeon:
+                    break;
+                case Location.Home:
+                    home.Draw();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
