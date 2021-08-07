@@ -1,44 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SFML.Graphics;
+using SFML.Window;
+using System;
+using System.IO;
 
 namespace Leveling_Up
 {
     class City
     {
-        enum Options { GoToHome, GoToDungeon, Error}
+        private Sprite sprite;
+        private Texture texture;
+        enum Options { GoToHome, GoToDungeon, Error }
 
+        public City(string backgroundPath, Player player)
+        {
+            texture = new Texture(backgroundPath);
+            sprite = new Sprite(texture);
+
+        }
+        Options option;
         public Player Stay(Player player)
         {
-        
-            Console.WriteLine("Welcome!");
             Options option;
 
-                Console.WriteLine("Rest = 0   -   Leave = 1");
-
-                int input = Convert.ToInt32(Console.ReadLine());
-
-                if (input >= 0 && input < (int)Options.Error)
-                {
-                    option = (Options)input;
-                }
-                else
-                {
-                    option = Options.Error;
-                }
-
-                switch (option)
-                {
-                    case Options.GoToHome:
-                        player.GoToHome();
-                        break;
-                    case Options.GoToDungeon:
-                        player.GoToDungeon();
-                        break;
-                    default:
-                        break;
-                }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Up))
+            {
+                option = Options.GoToHome;
+            }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Down))
+            {
+                option = Options.GoToDungeon;
+            }
             return player;
+        }
+        public void Update(Player player)
+        {
+        }
+        public void Draw(RenderWindow window)
+        {
+            window.Draw(sprite);
         }
     }
 }

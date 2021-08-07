@@ -7,11 +7,14 @@ namespace Leveling_Up
         static void Main(string[] args)
         {
             Game game = new Game();
-            Console.WriteLine("GameUpdate");
+            MusicManager.GetInstance().Play();
+            FrameRate.InitFrameRateSystem();
             while (game.UpdateWindow())
             {
                 game.UpdateGame();
+                CollisionManager.GetInstance().CheckCollisions();
                 game.DrawGame();
+                FrameRate.OnFrameEnd();
             }
             Console.ReadKey();
         }

@@ -12,5 +12,9 @@ namespace Leveling_Up
         {
 
         }
+        public void Update(Stage stage)
+        {
+
+        }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using SFML.Graphics;
 using SFML.Window;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Leveling_Up
 {

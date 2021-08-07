@@ -2,19 +2,16 @@
 using SFML.System;
 using SFML.Window;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace Leveling_Up
 {
-    public class Player : Character
+    public class Player : Character, IColisionable
     {
-       
+
         public int xpActual;
         public int xpProximoNivel = 100;
         public int gold;
-        private Location location;
+        // private Location location;
         public Player(string path, Vector2f position) : base(path, position)
         {
             TextFileReader.ReadPlayerFromFile("Player/Player.txt", this);
@@ -48,28 +45,28 @@ namespace Leveling_Up
                 currentPosition.Y -= speed * FrameRate.GetDeltaTime();
             }
         }
-        public Location GetLocation()
-        {
-            return location;
-        }
-
-        public void GoToDungeon()
-        {
-            location = Location.Dungeon;
-        }
-
-        public void GoToCity()
-        {
-            location = Location.City;
-        }
-        public void GoToShop()
-        {
-            location = Location.Shop;
-        }
-        public void GoToHome()
-        {
-            location = Location.Home;
-        }
+        //public Location GetLocation()
+        //{
+        //    return location;
+        //}
+        //
+        //public void GoToDungeon()
+        //{
+        //    location = Location.Dungeon;
+        //}
+        //
+        //public void GoToCity()
+        //{
+        //    location = Location.City;
+        //}
+        //public void GoToShop()
+        //{
+        //    location = Location.Shop;
+        //}
+        //public void GoToHome()
+        //{
+        //    location = Location.Home;
+        //}
         public void Heal()
         {
             HP = maxHP;
@@ -97,9 +94,33 @@ namespace Leveling_Up
                 mana = maxMana;
             }
         }
+        public FloatRect GetBounds()
+        {
+            return sprite.GetGlobalBounds();
+        }
         public bool muertePJ()
         {
             return HP <= 0;
+        }
+        public void OnCollision(IColisionable other)
+        {
+            
+        }
+       
+        public void OnCollisionEnter(IColisionable other)
+        {
+            if (other is InvisibleWall)
+            {
+                Console.WriteLine("Player enter");
+            }
+        }
+       
+        public void OnCollisionExit(IColisionable other)
+        {
+            if (other is InvisibleWall)
+            {
+                Console.WriteLine("Player exit");
+            }
         }
     }
 }

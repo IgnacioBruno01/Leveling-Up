@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SFML.Graphics;
+using SFML.Window;
+using System;
 
 namespace Leveling_Up
 {
     class Home
     {
-        enum Options { HealerPlayer, GoToCity, Error }
+        private Texture texture;
+        private Sprite sprite;
+        enum Options { HealerPlayer, GoToCity }
+
+        public Home(string backgroundPath)
+        {
+            texture = new Texture(backgroundPath);
+            sprite = new Sprite(texture);
+        }
+
         public Player HealerPlayer(Player player)
         {
             player.Heal();
@@ -15,35 +24,48 @@ namespace Leveling_Up
         }
         public Player Stay(Player player)
         {
-          
-            Console.WriteLine("Home sweet home!");
             Options option;
-            
-                Console.WriteLine("Rest = 0   -   Leave = 1");
 
-                
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Up))
+            {
+                if (Keyboard.IsKeyPressed(Keyboard.Key.Enter))
+                {
+                    option = Options.HealerPlayer;
+                }
+            }
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Down))
+            {
+                if (Keyboard.IsKeyPressed(Keyboard.Key.Enter))
+                {
+                    option = Options.GoToCity;
+                }
 
-                if (input >= 0 && input < (int)Options.Error)
-                {
-                    option = (Options)input;
-                }
-                else
-                {
-                    option = Options.Error;
-                }
+            }
 
-                switch (option)
-                {
-                    case Options.HealerPlayer:
-                        player = HealerPlayer(player);
-                        break;
-                    case Options.GoToCity:
-                        player.GoToCity();
-                    
-                        break;
-                    default:
-                        break;
-                }
+            //switch (option)
+            //{
+            //    case Options.HealerPlayer:
+            //        if (Keyboard.IsKeyPressed(Keyboard.Key.Up))
+            //        {
+            //            if (Keyboard.IsKeyPressed(Keyboard.Key.Enter))
+            //            {
+            //                player = HealerPlayer(player);
+            //            }
+            //        }
+            //
+            //        break;
+            //    case Options.GoToCity:
+            //        if (Keyboard.IsKeyPressed(Keyboard.Key.Down))
+            //        {
+            //            if (Keyboard.IsKeyPressed(Keyboard.Key.Enter))
+            //            {
+            //                player.GoToCity();
+            //            }
+            //        }
+            //        break;
+            //    default:
+            //        break;
+            //}
             return player;
         }
 
@@ -51,10 +73,9 @@ namespace Leveling_Up
         {
 
         }
-        public void Draw()
+        public void Draw(RenderWindow window)
         {
-
+            window.Draw(sprite);
         }
-
     }
 }
